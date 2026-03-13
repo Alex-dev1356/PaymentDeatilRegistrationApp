@@ -12,6 +12,8 @@ export class PaymentDetailsService {
 
   paymentDetailList: PaymentDetail[] = [];
 
+  formData:PaymentDetail = new PaymentDetail();
+
   constructor(private http:HttpClient) { }
 
   //Defining the get method to get the list of PaymentDetail
