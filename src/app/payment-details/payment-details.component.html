@@ -12,7 +12,11 @@
             <li class="list-group-item d-flex justify-content-between 
             align-items-start border mb-2 px-4 py-3 rounded-3" 
             *ngFor="let paymentDetail of service.paymentDetailList">
-                {{paymentDetail.cardOwnerName}}
+                <div>
+                    <div class="fw-bold">{{paymentDetail.cardOwnerName}}</div>
+                    <div>{{paymentDetail.cardNumber}}</div>
+                    <div class="fw-bold">{{paymentDetail.expirationDate}}</div>
+                </div>
             </li>
         </ul>
     </div>
