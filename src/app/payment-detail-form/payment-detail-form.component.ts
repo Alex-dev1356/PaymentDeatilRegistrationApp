@@ -12,6 +12,12 @@ export class PaymentDetailFormComponent {
 
   constructor(public service:PaymentDetailsService){}
 
-  onSubmit(form : NgForm){}
+  onSubmit(form : NgForm){
+    this.service.postPaymentDetail()
+    .subscribe({
+      next: res => {this.service.paymentDetailList = res as PaymentDetail[]},
+      error: err => {console.log(err)}
+    });
+  }
 
 }

@@ -27,4 +27,9 @@ export class PaymentDetailsService {
     });
   }
 
+  //Defining the post method to add a new PaymentDetail
+  postPaymentDetail(){
+    return this.http.post(this.url, this.formData)
+  }
+
 }
