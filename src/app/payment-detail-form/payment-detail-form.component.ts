@@ -15,7 +15,10 @@ export class PaymentDetailFormComponent {
   onSubmit(form : NgForm){
     this.service.postPaymentDetail()
     .subscribe({
-      next: res => {this.service.paymentDetailList = res as PaymentDetail[]},
+      next: res => {
+        this.service.paymentDetailList = res as PaymentDetail[]
+        this.service.resetForm(form)
+        this.service.refreshListAfterSubmit()},
       error: err => {console.log(err)}
     });
   }
